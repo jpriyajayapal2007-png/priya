@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <span class="eyebrow">
+        DASHBOARD
+    </span>
+
+    <h1>
+        Hi, {{ user.name }}.
+    </h1>
+
+    <p>
+        Choose a planner and turn your budget
+        into a practical starting plan.
+    </p>
+
+</div>
+
+
+<section class="grid three">
+
+    <a
+        class="card clickable"
+        href="/planner/home"
+    >
+
+        <h2>
+            ⌂ Home
+        </h2>
+
+        <p>
+            Interior budget planner
+        </p>
+
+    </a>
+
+
+    <a
+        class="card clickable"
+        href="/planner/party"
+    >
+
+        <h2>
+            ★ Party
+        </h2>
+
+        <p>
+            Event budget planner
+        </p>
+
+    </a>
+
+
+    <a
+        class="card clickable"
+        href="/planner/jewelry"
+    >
+
+        <h2>
+            ◇ Jewelry
+        </h2>
+
+        <p>
+            Occasion & outfit planner
+        </p>
+
+    </a>
+
+</section>
+
+
+<section class="card">
+
+    <h2>
+        Recent recommendation history
+    </h2>
+
+    <div id="history">
+
+        <p>
+            Loading...
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+fetch("/history")
+
+    .then(response =>
+        response.json()
+    )
+
+    .then(rows => {
+
+        const element =
+            document.getElementById(
+                "history"
+            );
+
+        if (!rows.length) {
+
+            element.innerHTML =
+                "<p>No plans yet.</p>";
+
+            return;
+        }
+
+        element.innerHTML =
+            rows
+                .slice(0, 10)
+                .map(item => `
+
+                    <div class="history-row">
+
+                        <b>
+                            ${item.planner}
+                        </b>
+
+                        <span>
+                            ${
+                                new Date(
+                                    item.created_at
+                                ).toLocaleString()
+                            }
+                        </span>
+
+                    </div>
+
+                `)
+                .join("");
+
+    })
+
+    .catch(() => {
+
+        document.getElementById(
+            "history"
+        ).innerHTML =
+            "<p>Unable to load history.</p>";
+
+    });
+
+</script>
+
+{% endblock %}

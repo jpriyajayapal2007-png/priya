@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}
+PocketSmart AI — Smart Budget Assistant
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div>
+
+        <span class="eyebrow">
+            GENAI BUDGET ASSISTANT
+        </span>
+
+        <h1>
+            Plan smarter.
+            Spend with a plan.
+        </h1>
+
+        <p>
+            PocketSmart AI turns a budget and your preferences
+            into structured plans for home interiors,
+            parties and jewelry.
+        </p>
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="/register"
+            >
+                Get started
+            </a>
+
+            <a
+                class="btn ghost"
+                href="/login"
+            >
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="orb">
+            ₹
+        </div>
+
+        <h3>
+            Budget-first recommendations
+        </h3>
+
+        <p>
+            Allocation + suggestions + practical tips
+            in one place.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="grid three">
+
+    <article class="card">
+
+        <div class="icon">
+            ⌂
+        </div>
+
+        <h2>
+            Home Interior
+        </h2>
+
+        <p>
+            Plan furniture, lighting, decor and appliances
+            around a fixed budget.
+        </p>
+
+        <a href="/register">
+            Open planner →
+        </a>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="icon">
+            ★
+        </div>
+
+        <h2>
+            Party Planner
+        </h2>
+
+        <p>
+            Allocate spending across food, venue,
+            decoration and entertainment.
+        </p>
+
+        <a href="/register">
+            Open planner →
+        </a>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="icon">
+            ◇
+        </div>
+
+        <h2>
+            Jewelry Planner
+        </h2>
+
+        <p>
+            Get occasion and style-aware jewelry ideas,
+            with optional outfit image input.
+        </p>
+
+        <a href="/register">
+            Open planner →
+        </a>
+
+    </article>
+
+</section>
+
+
+<section class="note">
+
+    <strong>
+        Transparency:
+    </strong>
+
+    Demo recommendations use estimated prices
+    and platform search links.
+
+    Live inventory and pricing require
+    an approved provider integration.
+
+</section>
+
+{% endblock %}

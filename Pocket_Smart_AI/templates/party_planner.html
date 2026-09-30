@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <span class="eyebrow">
+        PARTY PLANNER
+    </span>
+
+    <h1>
+        Plan your event budget
+    </h1>
+
+    <p>
+        Allocate the budget across
+        the main event categories.
+    </p>
+
+</div>
+
+
+<form
+    id="party-form"
+    class="card planner-form"
+>
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            id="budget"
+            type="number"
+            min="1"
+            required
+            value="30000"
+        >
+
+    </label>
+
+
+    <label>
+
+        Guests
+
+        <input
+            id="guests"
+            type="number"
+            min="1"
+            required
+            value="25"
+        >
+
+    </label>
+
+
+    <label>
+
+        Event type
+
+        <select id="event_type">
+
+            <option>
+                birthday
+            </option>
+
+            <option>
+                corporate
+            </option>
+
+            <option>
+                wedding
+            </option>
+
+            <option>
+                family gathering
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Venue
+
+        <input
+            id="venue"
+            value="indoor"
+        >
+
+    </label>
+
+
+    <label>
+
+        City
+
+        <input
+            id="city"
+            value="Chennai"
+        >
+
+    </label>
+
+
+    <label>
+
+        Food preference
+
+        <select id="food_preference">
+
+            <option>
+                mixed
+            </option>
+
+            <option>
+                vegetarian
+            </option>
+
+            <option>
+                non-vegetarian
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <button
+        class="btn"
+        type="submit"
+    >
+        Generate party plan
+    </button>
+
+</form>
+
+
+<div id="result"></div>
+
+{% endblock %}

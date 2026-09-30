@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <span class="eyebrow">
+        HOME INTERIOR
+    </span>
+
+    <h1>
+        Build a home plan
+    </h1>
+
+    <p>
+        Enter a total budget, rooms and items.
+    </p>
+
+</div>
+
+
+<form
+    id="home-form"
+    class="card planner-form"
+>
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            id="budget"
+            type="number"
+            min="1"
+            required
+            value="50000"
+        >
+
+    </label>
+
+
+    <label>
+
+        City
+
+        <input
+            id="city"
+            value="Chennai"
+        >
+
+    </label>
+
+
+    <label>
+
+        Style
+
+        <select id="style">
+
+            <option>
+                modern
+            </option>
+
+            <option>
+                minimal
+            </option>
+
+            <option>
+                traditional
+            </option>
+
+            <option>
+                industrial
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Rooms
+
+        <input
+            id="rooms"
+            value="Living Room, Bedroom"
+        >
+
+    </label>
+
+
+    <label>
+
+        Items
+
+        <small>
+            One item per line:
+            category, quantity
+        </small>
+
+        <textarea id="items">ceiling light, 2
+side table, 1
+wall art, 2</textarea>
+
+    </label>
+
+
+    <button
+        class="btn"
+        type="submit"
+    >
+        Generate home plan
+    </button>
+
+</form>
+
+
+<div id="result"></div>
+
+{% endblock %}

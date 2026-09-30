@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}
+Jewelry Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <span class="eyebrow">
+        JEWELRY PLANNER
+    </span>
+
+    <h1>
+        Match jewelry to the occasion
+    </h1>
+
+    <p>
+        Optionally upload an outfit image
+        for visual coordination.
+    </p>
+
+</div>
+
+
+<form
+    id="jewelry-form"
+    class="card planner-form"
+    enctype="multipart/form-data"
+>
+
+    <label>
+
+        Budget (₹)
+
+        <input
+            name="budget"
+            type="number"
+            min="1"
+            required
+            value="10000"
+        >
+
+    </label>
+
+
+    <label>
+
+        Occasion
+
+        <select name="occasion">
+
+            <option>
+                wedding
+            </option>
+
+            <option>
+                party
+            </option>
+
+            <option>
+                college event
+            </option>
+
+            <option>
+                festival
+            </option>
+
+            <option>
+                formal event
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Style
+
+        <select name="style">
+
+            <option>
+                elegant
+            </option>
+
+            <option>
+                minimal
+            </option>
+
+            <option>
+                traditional
+            </option>
+
+            <option>
+                statement
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Metal
+
+        <select name="metal">
+
+            <option>
+                any
+            </option>
+
+            <option>
+                gold-tone
+            </option>
+
+            <option>
+                silver-tone
+            </option>
+
+            <option>
+                rose-gold-tone
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Notes
+
+        <textarea
+            name="notes"
+            placeholder="Color, neckline, preferred size, etc."
+        ></textarea>
+
+    </label>
+
+
+    <label>
+
+        Outfit image (optional)
+
+        <input
+            name="outfit_image"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+    </label>
+
+
+    <button
+        class="btn"
+        type="submit"
+    >
+        Generate jewelry plan
+    </button>
+
+</form>
+
+
+<div id="result"></div>
+
+{% endblock %}
